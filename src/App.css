@@ -1,0 +1,304 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Css 파일에 Noto Sans KR 폰트 적용*/
+* {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+/** header.jsx */
+
+.category {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.category:hover {
+  color: #7CD0D5;
+}
+
+/** 기본적으로 카테고리 박스를 숨김*/
+
+.category-box {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  color: #000000;
+}
+
+.subcategory-box {
+  display: none;
+  position: absolute;
+  top: 0; /* 첫 번째 박스와 위쪽 높이 맞춤 */
+  left: 200px; /* 첫 번째 박스 오른쪽에 위치*/
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+/** 호버 시 박스 표시 */
+.category:hover .category-box {
+  display: block;
+}
+
+/* "웹 개발"에만 호버 시 두 번째 박스 표시 */
+.has-subcategory:hover .subcategory-box {
+  display: block;
+}
+
+.category-box ul,
+.subcategory-box ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.category-box li,
+.subcategory-box li {
+  padding: 5px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.category-box a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.category-box a:hover {
+  color: #7CD0D5;
+}
+
+.category-box li:last-child
+.subcategory-box li:last-child {
+  border-bottom: none;
+}
+
+
+.search-input-group {
+  max-width: 500px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login-btn {
+  white-space: nowrap; /* 텍스트 줄 바꿈 방지 */
+  background-color: #ffffff;
+  color: black;
+  border: 1px solid black;
+}
+
+.join-btn {
+  white-space: nowrap; /* 텍스트 줄 바꿈 방지 */
+  background-color: #7CD0D5;
+  margin-left: 1rem;
+}
+
+/** Carousel.jsx 관련 css */
+
+.carousel-item {
+  cursor: grab;
+}
+
+.pagenation-controller {
+  display: flex; /* flex 레이아웃 모델 활성화 */
+  flex-direction: row; /* 자식요소들이 가로방향으로 정렬  */
+  justify-content: space-between; /* 자식요소 사이의 고르게 여백지정 */
+  align-items: center; /* 교차축 방향 중앙(center)정렬 ex) 여기서는 flex-direction: row을 주었기때문에 세로중앙 정렬이됨.*/
+  padding: 0 1rem; /* 상하의 0 좌우의 1rem=16px 만큼 자식요소 사이의 여백을 줌 rem=폰트사이즈 브라우저의 기본 폰트사이즈가 16이기때문에 16의 여백을 줌*/
+  width: 135px; /* 가로길이 */
+  height: 36px; /* 세로길이 */
+  font-size: .875rem; /* 0.875=14px */
+  color: #fff; /* 텍스트색깔 */
+  border-radius: 20px; /* 외곽 테두리 */
+  background-color: rgba(0, 0, 0, .5); /*  배경색 */
+}
+
+.index-wrapper {
+  margin-right: auto;
+}
+
+.current-index {
+  padding-left: 0.5rem;
+}
+
+.prev-btn {
+  padding: 0;
+  background: none;
+  border: 0;
+  color: #000000;
+  cursor: pointer;
+}
+
+.fa-chevron-left {
+  color: #ffffff;
+}
+
+.pause-btn {
+  padding: 0;
+  background: none;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+}
+
+.next-btn {
+  padding: 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: #fff;
+}
+
+.prev-btn:hover {
+  background-color: none;
+}
+
+.control-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.carouse-button {
+  background-color: #ffffff;
+  width: 170px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid #000000;
+}
+
+.all-carouse-button {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #ced4da;
+  border-radius: 36px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .08);
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/** LectureCard.jsx */
+
+.list-title {
+  font-size: 24px;
+  font-family: bold;
+}
+
+.Card-image {
+  width: 200px;
+  height: 200px;
+}
+
+.lecture-title {
+  font-size: 20px;
+  font-family: bold;
+}
+
+.star-icon {
+  color: yellow;
+  margin-right: 10px;
+}
+
+.lecture-price {
+  font-family: bold;
+}
+
+.lecture-list {
+  display: flex;
+  align-items: center; /* 수직 정렬 */
+}
+
+.lecture {
+  margin-right: 50px;
+}
+
+/** LecturerList.jsx */
+.lecture-recommendation-List {
+  display: flex;
+  align-items: center; /* 수직 정렬 */
+}
+
+.Card-image-large {
+  width: 360px;
+  height: 200px;
+}
+
+/** ScrollTop.jsx */
+
+.scroll-top {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 250px;
+}
+
+.scroll-top-button {
+  width: 90px;
+  height: 30px;
+}
+
+/** Footer.jsx*/
+
+.footer {
+  height: 200px;
+  background-color: #ced4da;
+  display: flex;
+  justify-content: center;  /* 가로 중앙 정렬 */
+  align-items: center;      /* 세로 중앙 정렬 */
+}
+
+.footer-logo {
+  text-decoration: none;
+  color: #000000;
+  font-size: large;
+  margin-right: 50px;
+}
+
