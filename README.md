@@ -1,3 +1,12 @@
+# 프로젝트 시작전 초기셋팅
+1. CRA 설치
+2. React 부트스트랩, 부트스트랩 설치
+3. 아이콘 임포트가 안된경우 React icons 설치
+
+# 프로젝트 하면서 알면 좋은것들
+1. 이미지는 1920x1080으로 가져오기. --> 너무 큰 사이즈로 가져오면 컴퓨터 성능에 따라 끓킴 현상이 발생할 수 있다.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -1,0 +1,98 @@
+/* Header.jsx */
+
+.category {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .category:hover {
+    color: #7CD0D5;
+  }
+  
+  /** 기본적으로 카테고리 박스를 숨김*/
+  
+  .category-box {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    color: #000000;
+  }
+  
+  .subcategory-box {
+    display: none;
+    position: absolute;
+    top: 0; /* 첫 번째 박스와 위쪽 높이 맞춤 */
+    left: 200px; /* 첫 번째 박스 오른쪽에 위치*/
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+  }
+  
+  /** 호버 시 박스 표시 */
+  .category:hover .category-box {
+    display: block;
+  }
+  
+  /* "웹 개발"에만 호버 시 두 번째 박스 표시 */
+  .has-subcategory:hover .subcategory-box {
+    display: block;
+  }
+  
+  .category-box ul,
+  .subcategory-box ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .category-box li,
+  .subcategory-box li {
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .category-box a {
+    text-decoration: none;
+    color: #000000;
+  }
+  
+  .category-box a:hover {
+    color: #7CD0D5;
+  }
+  
+  .category-box li:last-child
+  .subcategory-box li:last-child {
+    border-bottom: none;
+  }
+  
+  
+  .search-input-group {
+    max-width: 500px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .login-btn {
+    white-space: nowrap; /* 텍스트 줄 바꿈 방지 */
+    background-color: #ffffff;
+    color: black;
+    border: 1px solid black;
+  }
+  
+  .join-btn {
+    white-space: nowrap; /* 텍스트 줄 바꿈 방지 */
+    background-color: #7CD0D5;
+    margin-left: 1rem;
+  }

@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import Header from './components/header';
+import Header from './components/Header/Header';
 import Carousel from './components/Carousel';
 import Card from './components/LectureCard';
 import LecturerList from './components/LecturerList';
@@ -8,12 +8,6 @@ import ScrollTop from './components/ScrollTop';
 import Footer from './components/Footer';
 
 function App() {
-
-  const LecturerLists = [
-    {
-      
-    }
-  ]
   
   return (
     <>

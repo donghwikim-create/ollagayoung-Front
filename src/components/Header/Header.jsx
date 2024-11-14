@@ -8,6 +8,7 @@ import {
   InputGroup,
 } from "react-bootstrap";
 import { FaSearch } from "react-icons/fa"; // 돋보기 아이콘
+import './Header.css';
 
 function Header() {
   const [inputValue, setInputValue] = useState("");
